@@ -1,0 +1,19 @@
+{
+  "name": "network-utils",
+  "version": "1.0.0",
+  "type": "commonjs",
+  "bin": {
+    "network-utils": "./build/index.js"
+  },
+  "scripts": {
+    "build": "tsc"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^latest",
+    "zod": "^3"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "typescript": "^5"
+  }
+}
