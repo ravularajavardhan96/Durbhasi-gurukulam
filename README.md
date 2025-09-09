@@ -23,7 +23,7 @@ npm install
 npm run build
 
 
-⚠On Windows, you may see a warning about chmod. This can be ignored; the server will still work fine.
+On Windows, you may see a warning about chmod. This can be ignored; the server will still work fine.
 
 4. Run the server
 node build/index.js
