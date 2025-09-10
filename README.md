@@ -90,6 +90,7 @@ Zod for schema validation
 
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/daf723de-c493-4d1b-bc8d-c33f348c9737" />
 
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/0d362d1b-027e-47f2-a7aa-648f6f474dad" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/378de4b2-ae43-45f6-b755-2a2a1b1be817" />
+
 
 
