@@ -87,3 +87,9 @@ TypeScript
 MCP SDK (@modelcontextprotocol/sdk)
 
 Zod for schema validation
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/daf723de-c493-4d1b-bc8d-c33f348c9737" />
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/0d362d1b-027e-47f2-a7aa-648f6f474dad" />
+
+
