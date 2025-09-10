@@ -9,7 +9,6 @@ const stdio_js_1 = require("@modelcontextprotocol/sdk/server/stdio.js");
 const zod_1 = require("zod");
 const net_1 = __importDefault(require("net"));
 const promises_1 = __importDefault(require("dns/promises"));
-// MCP Server instance
 const server = new mcp_js_1.McpServer({
     name: "network-utils",
     version: "1.0.0",
@@ -18,8 +17,6 @@ const server = new mcp_js_1.McpServer({
         tools: {},
     },
 });
-// ================= Helper Functions =================
-// Check if a port is open
 async function checkPortOpen(host, port) {
     return new Promise((resolve) => {
         const socket = new net_1.default.Socket();
@@ -30,7 +27,7 @@ async function checkPortOpen(host, port) {
                 socket.destroy();
             }
         };
-        socket.setTimeout(3000); // 3s timeout
+        socket.setTimeout(3000); 
         socket.once("connect", () => {
             cleanup();
             resolve(true);
@@ -46,8 +43,6 @@ async function checkPortOpen(host, port) {
         socket.connect(port, host);
     });
 }
-// ================= MCP Tools =================
-// Tool 1: Check port
 server.tool("check_port", "Check if a host/port is open or closed", {
     host: zod_1.z.string().describe("Hostname or IP to check"),
     port: zod_1.z.number().min(1).max(65535).describe("Port number"),
@@ -63,7 +58,6 @@ server.tool("check_port", "Check if a host/port is open or closed", {
         ],
     };
 });
-// Tool 2: DNS lookup
 server.tool("dns_lookup", "Perform a DNS query (A, AAAA, MX, CNAME, TXT, etc.)", {
     host: zod_1.z.string().describe("Hostname to resolve"),
     recordType: zod_1.z.string().describe("DNS record type like A, AAAA, MX, CNAME, TXT"),
@@ -91,7 +85,6 @@ server.tool("dns_lookup", "Perform a DNS query (A, AAAA, MX, CNAME, TXT, etc.)",
         };
     }
 });
-// ================= Run Server =================
 async function main() {
     const transport = new stdio_js_1.StdioServerTransport();
     await server.connect(transport);

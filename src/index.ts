@@ -1,4 +1,4 @@
-console.error("=== Network Utility MCP Server Starting ===");
+console.error("MCP Server Start");
 
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
@@ -6,7 +6,6 @@ import { z } from "zod";
 import net from "net";
 import dns from "dns/promises";
 
-// MCP Server instance
 const server = new McpServer({
   name: "network-utils",
   version: "1.0.0",
@@ -16,9 +15,6 @@ const server = new McpServer({
   },
 });
 
-// ================= Helper Functions =================
-
-// Check if a port is open
 async function checkPortOpen(host: string, port: number): Promise<boolean> {
   return new Promise((resolve) => {
     const socket = new net.Socket();
@@ -31,7 +27,7 @@ async function checkPortOpen(host: string, port: number): Promise<boolean> {
       }
     };
 
-    socket.setTimeout(3000); // 3s timeout
+    socket.setTimeout(3000); 
 
     socket.once("connect", () => {
       cleanup();
@@ -52,9 +48,6 @@ async function checkPortOpen(host: string, port: number): Promise<boolean> {
   });
 }
 
-// ================= MCP Tools =================
-
-// Tool 1: Check port
 server.tool(
   "check_port",
   "Check if a host/port is open or closed",
@@ -76,7 +69,6 @@ server.tool(
   }
 );
 
-// Tool 2: DNS lookup
 server.tool(
   "dns_lookup",
   "Perform a DNS query (A, AAAA, MX, CNAME, TXT, etc.)",
@@ -108,8 +100,6 @@ server.tool(
     }
   }
 );
-
-// ================= Run Server =================
 
 async function main() {
   const transport = new StdioServerTransport();
